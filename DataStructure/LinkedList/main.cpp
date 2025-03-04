@@ -63,7 +63,7 @@ class LinkedList{
                 Node* temp = this->head;
                 while(temp != nullptr){
                     if(temp->value == value){
-                        return temp
+                        return temp;
                     }else{
                         temp = temp->next;
                     }
@@ -71,4 +71,16 @@ class LinkedList{
                 return nullptr;
             }
         }
-}
+
+        Node* get_node_by_index(int index){
+            if(this->is_list_empty()){
+                return nullptr;
+            }else{
+                Node* temp = this->head;
+                for(int i = 0 ; i < index ; i++){
+                    temp = temp->next;
+                }
+                return temp;
+            }
+        }
+};
