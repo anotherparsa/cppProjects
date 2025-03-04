@@ -52,7 +52,23 @@ class LinkedList{
                     cout << temp->value << " ";
                     temp = temp->next;
                 }
-                cout << endl;
+                cout << endl;   
+            }
+        }
+
+        Node* get_node_by_value(int value){
+            if(this->is_list_empty()){
+                return nullptr;
+            }else{
+                Node* temp = this->head;
+                while(temp != nullptr){
+                    if(temp->value == value){
+                        return temp
+                    }else{
+                        temp = temp->next;
+                    }
+                }
+                return nullptr;
             }
         }
 }
