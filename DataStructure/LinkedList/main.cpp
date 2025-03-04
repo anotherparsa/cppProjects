@@ -109,4 +109,26 @@ class LinkedList{
             this->length++;
             return true;
         }
+
+        bool insert_node(int value, int index){
+            if(index < 0 || index > this->length){
+                return false;
+            }else{
+                if(index == 0){
+                    this->prepend_node(value);
+                    return true;
+                }else if(index == this->length){
+                    this->append_node(value);
+                    return true;
+                }else{
+                    Node* new_node = new Node(value);
+                    Node* previous_node = this->get_node_by_index(index - 1);
+                    new_node->next = previous_node->next;
+                    previous_node->next = new_node;
+                    this->length++;
+                    return true;
+                }
+                return false;
+            }
+        }
 };
