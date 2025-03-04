@@ -96,4 +96,17 @@ class LinkedList{
             this->length++;
             return true;
         }
+
+        bool prepend_node(int value){
+            Node* new_node = new Node(value);
+            if(this->is_list_empty()){
+                this->head = new_node;
+                this->tail = new_node;
+            }else{
+                new_node->next = this->head;
+                this->head = new_node;
+            }
+            this->length++;
+            return true;
+        }
 };
