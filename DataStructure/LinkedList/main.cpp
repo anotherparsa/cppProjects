@@ -175,4 +175,28 @@ class LinkedList{
                 return false;
             }
         }
+
+        bool delete_node(int index){
+            if(this->is_list_empty()){
+                return false;
+            }else{
+                if(index > 0 || index >= this->length){
+                    return false;
+                }else if (index == 0){
+                    this->delete_first_node();
+                    return true;
+                }else if (index = this->length - 1){
+                    this->delete_last_node();
+                    return true;
+                }else{
+                    Node* temp = this->get_node_by_index(index);
+                    Node* previous_node = this->get_node_by_index(index - 1);
+                    previous_node->next = temp->next;
+                    this->length--;
+                    delete temp;
+                    return true;
+                }
+                return false;
+            }
+        }
 };
