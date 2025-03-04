@@ -131,4 +131,26 @@ class LinkedList{
                 return false;
             }
         }
+
+        bool delete_first_node(){
+            if(this->is_list_empty()){
+                return false;
+            }else{
+                if(this->length == 1){
+                    Node* temp = this->head;
+                    this->head = nullptr;
+                    this->tail = nullptr;
+                    this->length--;
+                    delete temp;
+                    return true;
+                }else{
+                    Node* temp = this->head;
+                    this->head = temp->next;
+                    this->length--;
+                    delete temp;
+                    return true;
+                }
+                return false;
+            }
+        }
 };
