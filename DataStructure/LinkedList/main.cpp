@@ -33,4 +33,8 @@ class LinkedList{
         Node* return_head(){
             return(this->head);
         }
+
+        Node* return_tail(){
+            return(this->tail);
+        }
 }
