@@ -19,4 +19,12 @@ class LinkedList{
         Node* tail;
         int length;
     
+    public:
+        LinkedList(){
+            this->head = nullptr;
+            this->tail = nullptr;
+            this->length = 0;
+        }
+
+        
 }
