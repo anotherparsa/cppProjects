@@ -37,4 +37,8 @@ class LinkedList{
         Node* return_tail(){
             return(this->tail);
         }
+
+        int return_length(){
+            return(this->length);
+        }
 }
