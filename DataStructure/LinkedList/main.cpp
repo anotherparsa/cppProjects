@@ -136,16 +136,38 @@ class LinkedList{
             if(this->is_list_empty()){
                 return false;
             }else{
+                Node* temp = this->head;
                 if(this->length == 1){
-                    Node* temp = this->head;
                     this->head = nullptr;
                     this->tail = nullptr;
                     this->length--;
                     delete temp;
                     return true;
                 }else{
-                    Node* temp = this->head;
                     this->head = temp->next;
+                    this->length--;
+                    delete temp;
+                    return true;
+                }
+                return false;
+            }
+        }
+
+        bool delete_last_node(){
+            if(this->is_list_empty()){
+                return false;
+            }else{
+                Node* temp = this->tail;
+                if(this->length == 1){
+                    this->head = nullptr;
+                    this->tail = nullptr;
+                    this->length--;
+                    delete temp;
+                    return true;
+                }else{
+                    Node* previous_node = this->get_node_by_index(this->length - 2);
+                    previous_node->next = nullptr;
+                    this->head = previous_node;
                     this->length--;
                     delete temp;
                     return true;
