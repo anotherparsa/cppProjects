@@ -27,7 +27,10 @@ class LinkedList{
         }
 
         bool is_list_empty(){
-            return (this->length == 0);
+            return(this->length == 0);
         }
-
+        
+        Node* return_head(){
+            return(this->head);
+        }
 }
