@@ -13,3 +13,10 @@ class Node{
         }
 };
 
+class LinkedList{
+    private:
+        Node* head;
+        Node* tail;
+        int length;
+    
+}
