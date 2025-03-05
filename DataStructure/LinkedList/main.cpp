@@ -167,7 +167,7 @@ class LinkedList{
                 }else{
                     Node* previous_node = this->get_node_by_index(this->length - 2);
                     previous_node->next = nullptr;
-                    this->head = previous_node;
+                    this->tail = previous_node;
                     this->length--;
                     delete temp;
                     return true;
@@ -199,4 +199,43 @@ class LinkedList{
                 return false;
             }
         }
+
+        bool change_node_value_by_index(int index, int value){
+            if(this->is_list_empty()){
+                return false;
+            }else{
+                if(index > 0 || index >= this->length){
+                    return false;
+                }else{
+                    Node* temp = this->head;
+                    for(int i = 0 ; i < index ; i++){
+                        temp = temp->next;
+                    }
+                    temp->value = value;
+                    return true;
+                }
+                return false;
+            }
+        }
 };
+
+
+int main(){
+    LinkedList* myLL = new LinkedList;
+    myLL->append_node(0);
+    myLL->append_node(1);
+    myLL->append_node(2);
+    myLL->append_node(3);
+    myLL->prepend_node(-1);
+    myLL->prepend_node(-2);
+    myLL->prepend_node(-3);
+    myLL->print_list();
+    myLL->insert_node(55, 3);
+    myLL->delete_first_node();
+    myLL->print_list();
+    myLL->delete_last_node();
+    myLL->delete_node(0);
+    myLL->print_list();
+    myLL->change_node_value_by_index(0, 191);
+    myLL->print_list();
+}
