@@ -1,1 +1,1 @@
-simple practices to learn CPP syntax
+simple practices to learn CPP syntax.
